@@ -1,17 +1,17 @@
 :root {
-  --bg: #f3eee3;
-  --bg-soft: #fffaf2;
+  --bg: #efe7d9;
+  --bg-soft: #fcf8f1;
   --surface: #ffffff;
-  --surface-alt: #f8f1e6;
-  --text: #16202d;
-  --muted: #586272;
-  --line: #d7cebf;
-  --primary: #12385d;
-  --primary-strong: #0b2742;
-  --primary-soft: #e6eef7;
-  --accent: #b6842e;
-  --accent-soft: #f6ead1;
-  --success: #2f7159;
+  --surface-alt: #f6ede0;
+  --text: #182330;
+  --muted: #5f6a77;
+  --line: #d8ccba;
+  --primary: #173b63;
+  --primary-strong: #0f2946;
+  --primary-soft: #e6eef8;
+  --accent: #a87928;
+  --accent-soft: #f2e3c3;
+  --success: #356c58;
   --shadow: 0 18px 45px rgba(20, 31, 46, 0.08);
   --shadow-strong: 0 24px 55px rgba(20, 31, 46, 0.14);
   --radius-lg: 28px;
@@ -35,14 +35,113 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(182, 132, 46, 0.14), transparent 24%),
-    radial-gradient(circle at right 12% top 10%, rgba(18, 56, 93, 0.08), transparent 22%),
-    linear-gradient(180deg, #fbf7ef 0%, #f3eee3 100%);
+    radial-gradient(circle at top left, rgba(168, 121, 40, 0.16), transparent 24%),
+    radial-gradient(circle at right 12% top 10%, rgba(23, 59, 99, 0.1), transparent 22%),
+    linear-gradient(180deg, #fbf7ef 0%, #efe7d9 100%);
   line-height: 1.65;
 }
 
 body.menu-open {
   overflow: hidden;
+}
+
+.ambient-squares {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.square {
+  position: absolute;
+  border-radius: 24px;
+  border: 1px solid rgba(23, 59, 99, 0.08);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.05)),
+    rgba(23, 59, 99, 0.03);
+  box-shadow: 0 24px 50px rgba(15, 41, 70, 0.08);
+  backdrop-filter: blur(2px);
+  animation: floatSquare 16s ease-in-out infinite;
+}
+
+.square-1 {
+  top: 14%;
+  left: 4%;
+  width: 130px;
+  height: 130px;
+  animation-delay: 0s;
+  transform: rotate(8deg);
+}
+
+.square-2 {
+  top: 22%;
+  right: 8%;
+  width: 88px;
+  height: 88px;
+  border-radius: 20px;
+  animation-delay: -3s;
+  transform: rotate(-12deg);
+}
+
+.square-3 {
+  top: 54%;
+  left: 8%;
+  width: 96px;
+  height: 96px;
+  animation-delay: -6s;
+  transform: rotate(14deg);
+}
+
+.square-4 {
+  top: 62%;
+  right: 10%;
+  width: 160px;
+  height: 160px;
+  animation-delay: -9s;
+  transform: rotate(-10deg);
+}
+
+.square-5 {
+  top: 80%;
+  left: 16%;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  animation-delay: -11s;
+  transform: rotate(10deg);
+}
+
+.square-6 {
+  top: 10%;
+  left: 48%;
+  width: 110px;
+  height: 110px;
+  animation-delay: -7s;
+  transform: rotate(-8deg);
+}
+
+@keyframes floatSquare {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.45;
+  }
+
+  25% {
+    transform: translate3d(18px, -16px, 0) rotate(8deg);
+    opacity: 0.72;
+  }
+
+  50% {
+    transform: translate3d(-10px, 14px, 0) rotate(-6deg);
+    opacity: 0.38;
+  }
+
+  75% {
+    transform: translate3d(12px, 22px, 0) rotate(10deg);
+    opacity: 0.62;
+  }
 }
 
 main {
@@ -111,6 +210,7 @@ main section[id] {
 }
 
 .logo {
+  order: 1;
   display: inline-flex;
   align-items: center;
   gap: 14px;
@@ -122,7 +222,7 @@ main section[id] {
   height: 58px;
   border-radius: 18px;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 10%;
   border: 2px solid rgba(18, 56, 93, 0.12);
   box-shadow: 0 8px 24px rgba(18, 56, 93, 0.12);
   flex-shrink: 0;
@@ -144,14 +244,25 @@ main section[id] {
 }
 
 .nav-menu {
+  order: 2;
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-left: auto;
+}
+
+.nav-actions {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .nav-menu a {
   color: var(--muted);
   font-weight: 700;
+  padding: 10px 0;
   transition: color 0.2s ease;
 }
 
@@ -170,6 +281,33 @@ main section[id] {
   color: var(--primary);
   cursor: pointer;
   font-size: 1.15rem;
+}
+
+.top-whatsapp {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  color: var(--success);
+  box-shadow: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.top-whatsapp::after {
+  content: none;
+}
+
+.top-whatsapp i {
+  font-size: 1.35rem;
+}
+
+.top-whatsapp:hover {
+  transform: translateY(-1px);
+  box-shadow: none;
+  color: #1f8f5f;
 }
 
 .hero {
@@ -346,7 +484,7 @@ main section[id] {
   width: 100%;
   height: 430px;
   object-fit: cover;
-  object-position: center 12%;
+  object-position: center top;
   background: var(--surface-alt);
 }
 
@@ -832,8 +970,31 @@ main section[id] {
 }
 
 @media (max-width: 760px) {
+  .ambient-squares {
+    opacity: 0.7;
+  }
+
+  .square-1,
+  .square-4 {
+    width: 92px;
+    height: 92px;
+  }
+
+  .square-2,
+  .square-3,
+  .square-6 {
+    width: 64px;
+    height: 64px;
+  }
+
+  .square-5 {
+    width: 52px;
+    height: 52px;
+  }
+
   .navbar {
     min-height: 76px;
+    gap: 14px;
   }
 
   .menu-btn {
@@ -841,7 +1002,14 @@ main section[id] {
     place-items: center;
   }
 
+  .nav-actions {
+    order: 2;
+    gap: 10px;
+    margin-left: auto;
+  }
+
   .nav-menu {
+    order: 3;
     position: fixed;
     inset: 76px 12px auto 12px;
     width: auto;
@@ -874,6 +1042,12 @@ main section[id] {
 
   .logo-text small {
     display: none;
+  }
+
+  .top-whatsapp {
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
   }
 
   .navbar,
@@ -953,6 +1127,12 @@ main section[id] {
     border-radius: 18px;
   }
 
+  .profile-photo {
+    height: 360px;
+    object-fit: cover;
+    object-position: center top;
+  }
+
   .trust-strip {
     width: min(100% - 24px, 1160px);
     padding: 16px 0;
@@ -980,6 +1160,24 @@ main section[id] {
 }
 
 @media (max-width: 420px) {
+  .ambient-squares {
+    opacity: 0.55;
+  }
+
+  .square-1 {
+    top: 12%;
+    left: -4%;
+  }
+
+  .square-4 {
+    right: -6%;
+  }
+
+  .square-6 {
+    left: auto;
+    right: 24%;
+  }
+
   :root {
     --container: min(100% - 16px, 1160px);
   }
@@ -992,6 +1190,11 @@ main section[id] {
     width: 48px;
     height: 48px;
     border-radius: 14px;
+  }
+
+  .menu-btn {
+    width: 46px;
+    height: 46px;
   }
 
   .logo-text strong {
@@ -1047,8 +1250,9 @@ main section[id] {
   }
 
   .profile-photo {
-    height: 260px;
-    object-position: center;
+    height: 300px;
+    object-fit: cover;
+    object-position: center top;
   }
 
   .profile-card h2 {
