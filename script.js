@@ -5,6 +5,7 @@ const navLinks = document.querySelectorAll(".nav-menu a");
 const revealItems = document.querySelectorAll(".reveal");
 const sections = document.querySelectorAll("main section[id]");
 const progressBar = document.getElementById("scrollProgressBar");
+const MENU_BREAKPOINT = 1080;
 
 function setMenuState(isOpen) {
   navMenu.classList.toggle("active", isOpen);
@@ -22,7 +23,7 @@ menuBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("click", (event) => {
-  if (window.innerWidth > 760 || !navMenu.classList.contains("active")) {
+  if (window.innerWidth > MENU_BREAKPOINT || !navMenu.classList.contains("active")) {
     return;
   }
 
@@ -88,7 +89,7 @@ window.addEventListener("scroll", () => {
 });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth > 760) {
+  if (window.innerWidth > MENU_BREAKPOINT) {
     setMenuState(false);
     document.body.classList.remove("menu-open");
   }

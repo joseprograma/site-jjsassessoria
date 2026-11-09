@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&amp;family=Cormorant+Garamond:wght@500&amp;display=swap');
+      .marca { font-family: 'Playfair Display', 'Bodoni MT', Didot, Georgia, serif; font-weight: 500; }
+      .sub { font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif; font-weight: 500; }
+    </style>
+  </defs>
+
+  <!-- arco azul (esquerda e topo) -->
+  <path d="M 325 740 A 305 305 0 0 1 579 195" fill="none" stroke="#0E2A52" stroke-width="20" stroke-linecap="round"/>
+  <!-- arco verde (topo e direita) -->
+  <path d="M 603 205 A 300 300 0 0 1 797 548" fill="none" stroke="#0E6E6A" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- seta de crescimento -->
+  <path d="M 385 775 Q 640 805 785 606" fill="none" stroke="#0E2A52" stroke-width="16" stroke-linecap="round"/>
+  <polygon points="814,566 801,626 761,596" fill="#0E2A52"/>
+
+  <!-- livro -->
+  <line x1="292" y1="606" x2="378" y2="768" stroke="#0E2A52" stroke-width="12" stroke-linecap="round"/>
+  <polygon points="322,612 488,652 553,752 398,762" fill="#0E2A52"/>
+  <line x1="400" y1="690" x2="478" y2="698" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="410" y1="710" x2="492" y2="718" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+  <line x1="420" y1="730" x2="506" y2="738" stroke="#FFFFFF" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- barras -->
+  <polygon points="532,690 562,678 562,752 532,758" fill="#0E6E6A"/>
+  <polygon points="580,662 612,648 612,738 580,746" fill="#0E6E6A"/>
+  <polygon points="630,634 664,618 664,716 630,728" fill="#0E6E6A"/>
+  <polygon points="682,604 716,586 716,680 682,700" fill="#0E6E6A"/>
+
+  <!-- sigla -->
+  <text x="500" y="462" text-anchor="middle" class="marca" font-size="250" letter-spacing="-10"><tspan fill="#0E2A52">JJ</tspan><tspan fill="#0E6E6A">L</tspan></text>
+
+  <!-- linha com ponto -->
+  <line x1="310" y1="530" x2="485" y2="530" stroke="#0E2A52" stroke-width="2.5"/>
+  <line x1="515" y1="530" x2="690" y2="530" stroke="#0E2A52" stroke-width="2.5"/>
+  <circle cx="500" cy="530" r="7" fill="#0E6E6A"/>
+
+  <!-- texto -->
+  <text x="500" y="580" text-anchor="middle" class="sub" font-size="40" letter-spacing="9" fill="#0E6E6A">ASSESSORIA</text>
+</svg>
